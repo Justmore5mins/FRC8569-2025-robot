@@ -28,13 +28,14 @@ axis definition of SwerverDriveKinematics()
 
 public class chassis extends SubsystemBase {
   public AHRS gyro = new AHRS(SPI.Port.kMXP);
+  //define motors and set motor place
   private SwerveModule moduleA = new SwerveModule(Constants.A_T_ID,Constants.A_R_ID , Constants.A_E_ID, Constants.A_Offset); // A_E means encoder
   private SwerveModule moduleB = new SwerveModule(Constants.B_T_ID,Constants.B_R_ID , Constants.B_E_ID, Constants.B_Offset);
   private SwerveModule moduleC = new SwerveModule(Constants.C_T_ID,Constants.C_R_ID , Constants.C_E_ID, Constants.C_Offset); 
   private SwerveModule moduleD = new SwerveModule(Constants.D_T_ID,Constants.D_R_ID , Constants.D_E_ID, Constants.D_Offset);
   private SwerveDriveKinematics kinematics = new SwerveDriveKinematics(Constants.A_TRANSLATION2D,Constants.B_TRANSLATION2D,Constants.C_TRANSLATION2D,Constants.D_TRANSLATION2D);
 
-  /** Creates a new chassis. */
+  /* GUI output */
   public chassis() {
     SmartDashboard.putNumber("A", moduleA.encoder.getAbsolutePosition().getValue());
     SmartDashboard.putNumber("B", moduleB.encoder.getAbsolutePosition().getValue());

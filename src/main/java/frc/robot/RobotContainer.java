@@ -18,7 +18,7 @@ public class RobotContainer {
     chassis.setDefaultCommand(new RunCommand(() -> chassis.drive(
       () -> -controller.getLeftY() * Constants.kThrottleMaxSpeed, 
       ()-> - controller.getLeftX() * Constants.kThrottleMaxSpeed, 
-      ()-> -controller.getRightX()* Constants.kRotationMaxSpeed
+      ()-> -controller.getRightX() * Constants.kRotationMaxSpeed
     ),chassis));
     configureBindings();
   }
