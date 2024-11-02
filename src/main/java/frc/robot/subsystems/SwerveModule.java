@@ -37,7 +37,7 @@ public class SwerveModule {
         encoder.getConfigurator().apply(config);
         // encoder config done
         throttle.restoreFactoryDefaults(); // not required but use it is better
-        throttle.setIdleMode(IdleMode.kCoast); // set motor mode(break or coast)
+        throttle.setIdleMode(IdleMode.kBrake); // set motor mode(break or coast)
         rotorPID.enableContinuousInput(-180, 180);
     }
 
